@@ -27,7 +27,7 @@ htpasswd -Bbn user password
 
 ## Run Distribution
 ```
-sudo docker run -d -p 5000:5000 -e "REGISTRY_HTTP_SECRET=user:passwordEncrypted" --restart=always --name registry registry:2
+sudo docker run -d -p 5000:5000 -v registry-data:/var/lib/registry -e "REGISTRY_HTTP_SECRET=user:passwordEncrypted" --restart=always --name registry registry:2
 ```
 
 #### This is all.
